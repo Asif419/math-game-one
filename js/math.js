@@ -2,8 +2,7 @@ const firstNumber = document.getElementById('first-number');
 const symble = document.getElementById('operator');
 const secondNumber = document.getElementById('second-number');
 const finalNumber = document.getElementById('final-number');
-const btnSubmit = document.getElementById('btn-submit');
-const btnReload = document.getElementById('btn-reload');
+const btnsubmit = document.getElementById('btn-submit');
 const errorMessage = document.getElementById('error-message');
 const wrongMessage = document.getElementById('wrong-message');
 const streakField = document.getElementById('streak');
@@ -61,7 +60,7 @@ function one() {
 one();
 
 
-btnSubmit.addEventListener('click', function () {
+btnsubmit.addEventListener('click', function () {
 
     const submitedValue = finalNumber.value;
 
@@ -82,9 +81,5 @@ btnSubmit.addEventListener('click', function () {
             streak = 0
             streakField.innerText = streak;
         }
-    }
-})
-
-btnReload.addEventListener('click', function () {
-    location.reload();
+    }   
 })
