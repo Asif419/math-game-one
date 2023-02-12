@@ -24,8 +24,8 @@ function generateNumber(min, max) {
 
 function one() {
     //two number
-    let generatedFirstNumber = generateNumber(1, 20);
-    let generatedSecondNumber = generateNumber(1, 20);
+    let generatedFirstNumber = generateNumber(1, 10);
+    let generatedSecondNumber = generateNumber(1, 10);
 
     //generate operator
     const operator = operators[Math.floor(Math.random() * operators.length)];
