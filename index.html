@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,50 @@
 
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- my css -->
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-    <h1>Welcome to the game</h1>
+
+<body class="body-container bg-yellow-400">
+
+    <!-- math section -->
+    <section id="math-field " class="mt-40">
+        <div class="bg-neutral-100 text-black text-center m-5 m-md-20 p-5 rounded-lg mx-auto w-80 md:w-2/5 flex flex-col justify-center items-center">
+            <h1 class="pt-5 font-medium">Fill in the blank with correct number!</h1>
+            <div id="math-question-field" class="my-5 w-100 md:w-3/5">
+                <div class="bg-neutral-300 text-slate-900 font-bold p-5 text-3xl rounded-lg">
+                    <h5> <span> 7 </span> <span> * </span> <span> 7 </span> <span> = </span> <span> <input type="number" class="w-2/4 border-b-4 border-indigo-500 rounded bg-transparent text-center outline-0" placeholder="?"> </span> </h5>
+                </div>
+                <button id="submit" class="bg-yellow-400 px-5 py-2 mt-5 text-center font-semibold rounded-lg ">Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- score section -->
+    <!-- <section id="score-field">
+        <div class="p-5 text-black text-center text-3xl font-bold flex flex-col justify-center items-center">
+            <div>
+                <h1><span>10</span> / <span>10</span> </h1>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-x-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+                <div class="score-color bg-neutral-100 w-8 h-10 border-y-2 border-r-2 border-indigo-500"></div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- script file connection -->
+    <script src=""></script>
 </body>
+
 </html>
