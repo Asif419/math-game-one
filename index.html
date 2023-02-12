@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Game</title>
 
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/b05eb4462a.js" crossorigin="anonymous"></script>
+
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -23,19 +26,30 @@
             <h1 class="pt-5 font-medium">Fill in the blank with correct number!</h1>
             <div id="math-question-field" class="my-5 md:w-80">
                 <div class="bg-neutral-300 text-slate-900 font-bold p-3 text-2xl rounded-lg ">
-                    <h5> <span id="first-number"> 7 </span> <span id="operator"> * </span> <span id="second-number"> 7 </span> <span> = </span> <span> <input id="final-number" type="number"
+                    <h5> <span id="first-number"> 7 </span> <span id="operator"> * </span> <span id="second-number"> 7
+                        </span> <span> = </span> <span> <input id="final-number" type="number"
                                 class="w-2/4 border-b-4 border-indigo-500 rounded bg-transparent text-center outline-0"
                                 placeholder="?"> </span> </h5>
                 </div>
             </div>
             <div id="error-message" class="w-100 text-black-200 px-5 bg-red-400 rounded text-center hidden">
-                <h1>Don't allow empty submit</h1>
+                <h1>Empty submit not allow</h1>
             </div>
-            <button id="btn-submit"
-                class="bg-yellow-400 px-5 py-2 mt-5 text-center font-semibold rounded-lg ">Submit</button>
-        </div>
+            <div>
+                <button id="btn-submit"
+                    class="bg-yellow-400 px-5 py-2 mt-5 text-center font-semibold rounded-lg">Submit</button>
+                <button id="btn-reload"
+                    class="bg-green-400 px-5 py-2 mt-5 text-center font-semibold rounded-lg">Reload</button>
+            </div>
+            <div class="text-slate-900 font-bold pt-3">
+                <h1>Streak: <span id="streak">0</span> </h1>
+            </div>
+            <div id="wrong-message" class="w-100 text-black-200 px-3 mt-3 bg-red-400 rounded text-center hidden">
+                <h1>Wrong answer!</h1>
+            </div>
         </div>
     </section>
+
 
     <!-- score section -->
     <!-- <section id="score-field">
