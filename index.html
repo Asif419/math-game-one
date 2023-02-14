@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body id="body-container " class="bg-yellow-400">
+<body id="body-container " class="bg-yellow-400 ">
 
     <!-- math section -->
-    <section id="math-field" class="mt-40">
+    <section id="math-field" class="flex flex-col justify-center items-center">
+        <!-- blur-sm -->
         <div
             class="bg-neutral-100 text-black text-center m-5 m-md-10 m-lg-15 p-5 rounded-lg mx-auto w-80 md:w-2/5 flex flex-col justify-center items-center">
-            <h1 class="pt-5 font-medium">Fill in the blank with correct number!</h1>
+            <h1 id="math-field-title" class="pt-5 font-medium"></h1>
             <div id="math-question-field" class="my-5 md:w-80">
                 <div class="bg-neutral-300 text-slate-900 font-bold p-3 text-2xl rounded-lg ">
                     <h5> <span id="first-number"> 7 </span> <span id="operator"> * </span> <span id="second-number"> 7
@@ -41,15 +42,36 @@
                 <button id="btn-reload"
                     class="bg-green-400 px-5 py-2 mt-5 text-center font-semibold rounded-lg">Reload</button>
             </div>
-            <div class="text-slate-900 font-bold pt-3">
-                <h1>Streak: <span id="streak">0</span> </h1>
-            </div>
+
             <div id="wrong-message" class="w-100 text-black-200 px-3 mt-3 bg-red-400 rounded text-center hidden">
                 <h1>Wrong answer!</h1>
             </div>
         </div>
+        <div
+            class="bg-neutral-100 text-black text-center m-2 m-md-5 m-lg-10 p-5 rounded-lg mx-auto w-80 md:w-2/5 flex flex-col justify-center items-center">
+            <div
+                class="text-slate-900 font-normal pt-3 flex flex-col lg:flex-row gap-3 w-10/12 justify-center align-center grid grid-cols-1 md:grid-cols-3 mx-auto">
+                <h1 class="bg-green-300 rounded-lg px-2 py-2 font-bold">Streak: <span id="streak">0</span> </h1>
+                <h1 class="bg-red-300 rounded-lg px-2 py-2 font-bold">Error: <span id="error">0</span><span>/3</span> </h1>
+                <h1 class="bg-blue-300 rounded-lg px-2 py-2 font-bold">Last Streak: <span id="last-streak">0</span> </h1>
+            </div>
+        </div>
     </section>
 
+
+    <section id="overlay"
+        class="bg-slate-900/[0.9] fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center opacity-0 invisible">
+        <!-- opacity-0 invisible -->
+        <div id="overlay-inner" class="grid text-center">
+            <div>
+                <h1 id="win-lose" class="text-lg px-12 bg-white rounded-lg p-2 mb-2"></h1>
+            </div>
+            <div>
+                <button id="btn-start-over" class="bg-blue-800 text-white px-5 py-3 rounded-lg text-lg px-20 text-center">Start
+                    Over!</button>
+            </div>
+        </div>
+    </section>
 
     <!-- score section -->
     <!-- <section id="score-field">

@@ -7,6 +7,7 @@ const btnReload = document.getElementById('btn-reload');
 const errorMessage = document.getElementById('error-message');
 const wrongMessage = document.getElementById('wrong-message');
 const streakField = document.getElementById('streak');
+const errorField = document.getElementById('error');
 
 
 
@@ -14,6 +15,11 @@ const streakField = document.getElementById('streak');
 const operators = ['+', '-', '*'];
 let result;
 let streak = 0;
+let wrongAnswer = 0;
+let life = 3;
+let correctAnswer = 0;
+let lastStreak = 0;
+let currentStreak = 0;
 
 
 //generate number
@@ -54,6 +60,10 @@ function one() {
 
     //make empty input box
     finalNumber.value = '';
+
+    //math-field-title
+    const mathFieldTitle = document.getElementById('math-field-title');
+    mathFieldTitle.textContent = `Fill blank with correct answer.\n You have ${life} in your hand!`;
 }
 
 
@@ -74,17 +84,55 @@ btnsubmit.addEventListener('click', function () {
 
         if (result === submitedNumber) {
             streak++;
+            currentStreak++;
             one();
             streakField.innerText = streak;
+            errorField.innerText = wrongAnswer;
+            wrongMessage.classList.add('hidden');
+            correctAnswer++;
+            if (correctAnswer == 10) {
+                const overlay = document.getElementById('overlay');
+                overlay.classList.remove('opacity-0', 'invisible');
+                const winLose = document.getElementById('win-lose');
+                winLose.textContent = 'You Won!';
+            }
         }
         else {
             wrongMessage.classList.remove('hidden');
             streak = 0
             streakField.innerText = streak;
+            wrongAnswer++;
+            life--;
+            errorField.innerText = wrongAnswer;
+            const lastStreakSting = document.getElementById('last-streak');
+            if (lastStreak > currentStreak)
+                lastStreakSting.innerText = lastStreak;
+            else
+                lastStreakSting.innerText = currentStreak;
+
+            lastStreak = currentStreak;
+            currentStreak = 0;
+            one();
+            if (wrongAnswer < 3) {
+                lastStreakSting.innerText = lastStreak;
+                one();
+
+            }
+            else {
+                const overlay = document.getElementById('overlay');
+                overlay.classList.remove('opacity-0', 'invisible');
+                const winLose = document.getElementById('win-lose');
+                winLose.textContent = 'You Lose!';
+            }
         }
-    }   
+    }
 })
 
 btnReload.addEventListener('click', function () {
+    location.reload();
+})
+
+document.getElementById('btn-start-over').addEventListener('click', function () {
+    console.log(1);
     location.reload();
 })
