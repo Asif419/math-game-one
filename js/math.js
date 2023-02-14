@@ -63,7 +63,7 @@ function one() {
 
     //math-field-title
     const mathFieldTitle = document.getElementById('math-field-title');
-    mathFieldTitle.textContent = `Fill blank with correct answer.\n You have ${life} in your hand!`;
+    mathFieldTitle.textContent = `Fill blank with correct answer.\n You have ${life} term in your hand!`;
 }
 
 
